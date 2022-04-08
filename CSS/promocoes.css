@@ -1,0 +1,91 @@
+
+.promocoes{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+.header-promocoes{
+    height:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-slide-promocoes{
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px blue;
+}
+.container-items-promocoes{
+    position: absolute;
+    display: flex;
+    width: 70vw;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.item-promocao{
+    width: 70vw;
+    height: 70vh;
+    transition: all 2s linear;
+}
+.item-promocao:first-child{
+    margin-left: -100%;
+}
+.item-promocao img {
+    width: 70vw;
+    height: 70vh;
+    object-fit: cover;
+}
+.precos-promocoes{
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left:20px ;
+    gap: 20px;
+    overflow: hidden;
+
+}
+.precos-promocoes h3 {
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 1px 1px 2px black
+}
+.desconto{
+    text-decoration: line-through;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 2px black
+}
+.valorAtual {
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 1px 1px 2px black
+}
+.action-button{
+    font: bold 2rem sans-serif;
+    display: flex;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: #0000;
+    user-select: none;
+    transition: all 1s;
+}
+.action-button:hover{
+    color: white;
+    background-color: #0005;
+    border-radius: 10px;
+    cursor: pointer;
+}

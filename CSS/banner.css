@@ -1,0 +1,47 @@
+.banner{ 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+.header-banner{
+    width: 100%;
+    height: 15%;
+    background-color: black;
+    background-blend-mode: darken;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}   
+
+.container-slide{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px black;
+}
+.container-items{
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.item{
+    width: 100vw;
+    height: 100vh;
+    transition: all 2s linear;
+}
+.item:first-child{
+    margin-left: -100%;
+}
+.item img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}

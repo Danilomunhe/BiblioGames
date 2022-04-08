@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/banner.css">
+    <link rel="stylesheet" href="CSS/maisVendidos.css">
+    <link rel="stylesheet" href="CSS/promocoes.css">
+    <link rel="stylesheet" href="CSS/produtos.css">
+    <link rel="stylesheet" href="CSS/sobre.css">
+    <link rel="stylesheet" href="CSS/contatos.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <script src="./JS/main.js" defer></script>
+    <script src="./JS/slider.js" defer></script>
+    <title>Dani Games</title>
+</head>
+<body>
+    <header>
+        <div class="menu-burger-container">
+            <i class="menu-burger"></i>
+        </div>
+        <nav class="menu">
+            <ul class="itens-menu"> 
+                <li><a href="#">Home</a></li>
+                <li><a href="#maisVendidos">Destaques</a></li>
+                <li><a href="#promocoes">Promoções</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="banner">
+        <div class="container-slide">
+            <div class="container-items" id="container-items"></div>
+
+        </div>
+        </div>
+    </section>
+    <section class="maisVendidos" id="maisVendidos">
+        <div class="header-maisVendidos">
+            <h2>Destaques</h2>
+        </div>
+            <div class="maisVendidosContainer">
+                <div class="img-maisVendido">
+                    <img src="img/uncharted.jpg" alt="">
+                </div>
+                <div class="img-maisVendido">
+                    <img src="img/god.jpg" alt="">
+                </div>
+                <div class="img-maisVendido">
+                    <img src="img/theLastofus.jpg" alt="">
+                </div>
+                <div class="img-maisVendido">
+                    <img src="img/Horizon_Forbidden_West.jpg" alt="">
+                </div>
+            
+        </div>
+    </section>
+    <section class="promocoes" id="promocoes">
+        <div class="header-promocoes">
+            <h2>Promoções</h2>
+        </div>
+        <div class="container-slide-promocoes">
+            <div class="action-button" id="previous">&laquo;</div>
+            <div class="container-items-promocoes" id="container-items-promocoes"></div>
+            <div class="action-button" id="next">&raquo;</div>
+        </div>
+        </div>
+    </section>
+    <section class="sobre" id="sobre">
+        <div class="header-sobre">
+            <h2>Sobre</h2>
+        </div>
+        <div class="container-sobre">
+            <div class="imagem">
+                <img src="img/sobre.jpg" alt="">
+            </div>
+            <div class="sobre-historia">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, laboriosam incidunt quia quo, unde libero minus qui illum commodi error molestiae impedit! Corporis maxime vero quidem, ipsam mollitia ullam minus!</p>
+            </div>
+        </div>
+    </section>
+    <section class="produtos" id="produtos">
+        <div class="header-produtos">
+            <h2>Produtos</h2>
+        </div>
+        <div class="pesquisar-produto" id="pesquisarProduto">
+            <i class="fas fa-search" id="lupa"></i>
+            <p id="texto">Filtrar produto</p>
+        </div>
+        <div class="cancelar-produto" id="cancelarProduto">
+            <i class="far fa-window-close"></i>
+            <p id="texto">Fechar filtro</p>
+        </div>
+        <div class="container-produtos">
+            <div class="filtro-produtos">
+                <div class="navDePesquisa">     
+                    <input type="search" class="barraDePesquisa" placeholder="Procure um produto">
+                    <input type="button" class="botaoDePesquisa" value="Pesquisar">
+            </div>
+            <div class="categorias">
+                <ul>
+                    <li>Ação</li>
+                    <li>Aventura</li>
+                    <li>Survivor Horror</li>
+                    <li>Multiplayer</li>
+                    <li>Guerra</li>
+                </ul>
+            </div>
+            </div>
+            <div class="cards">
+            <!-- <div class="card-produto">
+                <h3>Uncharted</h3>
+                <div class="imagem-produto">
+                    <img src="img/uncharted.jpg" alt="">
+                </div>
+                <span class="descricao-produto">
+                    O quarto título principal da série Uncharted e foi lançado exclusivamente para PlayStation 4 em 10 de maio de 2016. 
+                </span>
+                <div class="valorEcompra">
+                    <span class="valor">R$89,90</span>
+                        <a href=""><button>Comprar</button></a>
+                    </div> -->
+                 
+                </div>
+                        
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="contatos" id="contatos">
+        <div class="contatos-header">
+            <h2>Fale Conosco</h2>
+        </div>
+        <div class="contatos-container">
+            <div class="contatos-imagem">
+            </div>
+            <div class="contatos-form">
+                <div class="form-header">
+                    <h2>Deixe uma mensagem</h2>
+                </div>
+                <form>
+                    <div class="campos">
+                        <label>Nome:</label>
+                        <input type="text" class="field">
+                    </div>
+                    <div class="campos">
+                        <label>Email:</label>
+                        <input type="email" class="field">
+                    </div>
+                    <div class="campos">
+                        <label>Escreva:</label>
+                        <textarea name="" id="" cols="15" rows="15"></textarea>
+                    </div>
+                    <input type="submit" value="Enviar" class="btn">
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>
+                Copyright &copy; 2021, Danilo Munhê - Todos os direitos reservados
+            </p>
+            <div class="social-list">
+                <ul> 
+                    <li><a href="https://www.facebook.com/danilo.munhe"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://github.com/Danilomunhe/Portfolio1"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.instagram.com/munhedanilo/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

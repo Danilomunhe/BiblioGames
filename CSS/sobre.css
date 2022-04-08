@@ -1,0 +1,50 @@
+.sobre{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+     background-color: black;
+    /* background: url("../img/banner2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+    background-blend-mode: darken; */
+}
+
+.header-sobre{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+.container-sobre{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+}
+.imagem{
+    width: 500px;
+    height: 500px;
+    background-color: violet;
+    border-radius:50%;
+    object-fit: cover;
+}
+.imagem img{
+    width: 100%;
+    height: 100%;
+    border-radius:50%;
+}
+.sobre-historia{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5rem;
+}

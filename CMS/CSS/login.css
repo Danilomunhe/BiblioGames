@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100vh;
+    background: linear-gradient(black 1%, blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login{
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px lightblue;
+    background: linear-gradient(black 1%, blue);
+}
+.titulo{
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(black 1%, blue);
+}
+.campos label{
+    font-size: 2rem;
+    color: white;
+}
+
+.campos input{
+    background-color: transparent;
+    border: none;
+    width: 20rem;
+    height: 2rem;
+    border-bottom: 2.5px dashed white;
+    outline: none;
+    transition:  all 1s;
+    color: white;
+    font-size: 1.5rem;  
+}
+
+.campos input:focus{
+    border-bottom: 2.5px solid white;
+}
+
+.btn{
+    width: 240px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    transition: all 1s linear;
+}
+.btn:hover{
+    background-color: royalblue;
+    color: white;
+}
