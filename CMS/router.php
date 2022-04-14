@@ -124,6 +124,26 @@
                           echo("<script> alert('".$resposta['message']."');
                           window.history.back(); </script>");
                 }
+            case 'USUARIO':
+                //import controller usuario
+                require_once('controller/controllerUsuarios.php');
+
+                //validando o tipo de ação
+                    if($action == 'INSERIR'){
+                        
+                        //chama a função para inserir da controller
+                        $resposta = inserirUsuario($_POST);
+                        //validando o tipo de retorno
+                        if(is_bool($resposta)){
+                            //verifica se o retorno foi verdadeiro
+                            if($resposta)
+                                echo("<script>alert('Registro Inserido com sucesso');
+                                window.location.href='usuarios.php'</script>"); 
+                        }elseif(is_array($resposta)){
+                            echo("<script> alert('".$resposta['message']."');
+                            window.history.back(); </script>");
+                        }
+                    }
             break;
          }  
 

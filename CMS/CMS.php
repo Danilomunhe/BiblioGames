@@ -28,20 +28,20 @@
             </div>
             <div class="categoriaDeServiço">
                 <div class="icone">
-                    <img src="img/categoria.png" alt="">
+                   <a href="categorias.php"> <img src="img/categoria.png" alt=""></a> 
                 </div>
                 <span>Categorias</span>
             </div>
             <div class="categoriaDeServiço">
                 <div class="icone">
-                    <img src="img/mensagem.png" alt="">
+                   <a href="contatos.php"> <img src="img/mensagem.png" alt=""></a>
                 </div>
                 <span>Contatos</span>
                 
             </div>
             <div class="categoriaDeServiço">
                 <div class="icone">
-                    <img src="img/user.png" alt="">
+                   <a href="usuarios.php"><img src="img/user.png" alt=""></a> 
                 </div>
                 <span>Usuários</span>
             </div>

@@ -34,7 +34,7 @@
     <div class="form-categoria">
         <form action="<?=$form?>" name="frmCategoria" method="post">
             <div class="campos">
-                <label>Nome da categoria:</label>
+                <label>Categoria:</label>
                 <input type="text" name='txtNomeCategoria' value="<?=$nome?>">
             </div>
             <div class="btn">

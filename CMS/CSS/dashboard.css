@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
 }
 
 body{
@@ -49,7 +50,7 @@ header{
     color: white;
 }
 main{
-    height: 100vh;
+    min-height: 100vh;
     background-color: black;
     display: flex;
     align-items: center;
