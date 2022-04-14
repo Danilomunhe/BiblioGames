@@ -38,7 +38,7 @@
 
     function atualizarCategoria($dadosCategoria, $id){
         if(!empty($dadosCategoria)){
-            //Validação de caixa vazia dos elementos nome, celular e email pois são obrigatórios no BD
+            //Validação de caixa vazia dos elementos nome
             if(!empty($dadosCategoria['txtNomeCategoria'])){
                 
                 //Validação para que o id seja válido

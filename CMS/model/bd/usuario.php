@@ -31,7 +31,52 @@
             //Fechando conexao com o bd
             encerrarConexao($conexao);
             return $statusResposta;
+     }
+
+    function updateUsuario($dadosUsuarios){
+        //iniciando variavel de resposta
+        $statusResposta = (boolean) false;
+
+        //abre a conexao
+        $conexao = conexaoMySql();
+
+        $sql = "update tblusuarios set  nome     ='".$dadosUsuarios['nome']."', 
+                                    login  ='".$dadosUsuarios['login']."', 
+                                    senha  ='".$dadosUsuarios['senha']."', 
+                                    imagem ='".$dadosUsuarios['imagem']."'
+                                    where idusuario=".$dadosUsuarios['idUsuario'];
+
+        //executar o script no bd
+        //validação para verificar se o script está correto
+        
+            if(mysqli_query($conexao, $sql)){
+                //validação para ver se a linha foi afetada
+                if(mysqli_affected_rows($conexao))
+                    $statusResposta = true;
+            }
+            //Solicita o fechamento da conexão com o bd
+            encerrarConexao($conexao);
+    
+            return $statusResposta;  
     }
+    function deleteUsuario($id){
+        $statusResposta = (boolean) false;
+
+        //abre conexao
+        $conexao = conexaoMySql();
+
+        //script delete 
+        $sql = "delete from tblusuarios where idusuario=".$id;
+
+        //validando se o script está correto
+            if(mysqli_query($conexao, $sql)){
+                //validando se o bd teve sucesso na execução
+                if(mysqli_affected_rows($conexao))
+                    $statusResposta = true;
+            }
+            encerrarConexao($conexao);
+            return $statusResposta;
+     }
     function selectAllUsuarios(){
          //abre conexao
          $conexao = conexaoMySql();
@@ -48,7 +93,7 @@
              while($rsDados = mysqli_fetch_assoc($result)){
                  //cria um array com os dados no bd
                  $arrayDados[$cont] = array(
-                    //  "id"    => $rsDados['idusario'],
+                     "id"    => $rsDados['idusuario'],
                      "nome"  => $rsDados['nome'],
                      "login" => $rsDados['login'],
                      "senha" => $rsDados['senha'],
@@ -60,5 +105,31 @@
 
              return $arrayDados;
          }
+     }
+    
+    function selectByIdUsuario($id){
+        //abre conexao
+        $conexao = conexaoMySql();
+
+        $sql = "select * from tblusuarios where idusuario =" .$id;
+
+        $result = mysqli_query($conexao, $sql);
+
+        if($result){
+           if($rsDados = mysqli_fetch_assoc($result)){
+                //Cria um array de dados
+                $arrayDados = array(
+                "id"       => $rsDados['idusuario'],
+                "nome"     => $rsDados['nome'],
+                "login"     => $rsDados['login'],
+                "senha"     => $rsDados['senha'],
+                "imagem"     => $rsDados['imagem'],
+            );
+           }
+        }
+           //solicita o fechamento da conexao com o banco de dados
+           encerrarConexao($conexao);
+
+           return $arrayDados;
      }
 ?>

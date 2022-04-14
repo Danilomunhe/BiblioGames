@@ -143,6 +143,59 @@
                             echo("<script> alert('".$resposta['message']."');
                             window.history.back(); </script>");
                         }
+                    }elseif($action == 'DELETAR'){
+                        //Recebe o id do registro que deverá ser excluído, 
+                        //que foi enviado pela url no link da imagem do excluir
+                        //que foi acionado na index 
+                        $idUsuario = $_GET['id'];
+
+                        $resposta = excluirUsuario($idUsuario);
+
+                        if(is_bool($resposta)){
+                            //verifica se o retorno foi verdadeiro
+                            if($resposta){
+                                echo("<script>alert('Registro excluído com sucesso');
+                                window.location.href='usuarios.php'</script>");
+                            }elseif(is_array($resposta))
+                                echo("<script> alert('".$resposta['message']."');
+                                window.history.back(); </script>");
+                        }
+                    }elseif($action == 'BUSCAR'){
+                        //Recebe o id do registro que deverá ser editado, 
+                        //que foi enviado pela url no link da imagem do editar
+                        //que foi acionado na index 
+                        $idUsuario = $_GET['id'];
+
+                        $dados = buscarUsuario($idUsuario);
+
+                        //ativa variavel de sessao
+                        session_start();
+
+                        //Guarda em uma variável de sessão os dados que o BD retornou para a busca do id
+                        //OBS: essa variável de sessão será utilizada na index.php, para colocar os dados
+                        //nas caixas de texto.
+                        $_SESSION['dadosUsuarios'] = $dados;
+
+                        //Utilizando o require apenas iremos importar a tela da index,
+                        //assim não ocorrerá um novo carregamento 
+                        require_once('usuarios.php');
+                    }elseif($action == 'EDITAR'){
+                        //Recebe o id que foi enviad via form
+                        $idUsuario = $_GET['id'];
+
+                        //chama a função de atualizar da controller
+                        $resposta = atualizarUsuario($_POST, $idUsuario);
+                        
+                        //validando o tipo de retorno para ver se é booleano
+                         if(is_bool($resposta)){
+                             //verificar se o retorno foi verdadeiro
+                                if($resposta)
+                                    echo("<script>alert('Registro Atualizado com sucesso');
+                                    window.location.href='usuarios.php'</script>");
+                         }elseif(is_array($resposta))
+                            echo("<script> alert('".$resposta['message']."');
+                              </script>");
+
                     }
             break;
          }  
