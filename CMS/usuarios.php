@@ -43,11 +43,11 @@
             </div>
             <div class="campos">
                 <label>Senha:</label>
-                <input type="password" name='txtSenha' value="<?=isset($senha)?$senha:null?>">
+                <input type="password" name='txtSenha' value="">
             </div>
             <div class="campos">
                 <label>Confirme a senha:</label>
-                <input type="password" name='txtSenhaConfirmada' value="<?=isset($senha)?$senha:null?>">
+                <input type="password" name='txtSenhaConfirmada' value="">
             </div>
             <div class="campos">
                 <label>Foto do usuário:</label>
@@ -62,7 +62,6 @@
             <tr>
                 <td>Usuário</td>
                 <td>Login</td>
-                <td>Senha</td>
                 <td>Opções</td>
             </tr>
             <?php
@@ -76,7 +75,6 @@
             <tr>
                 <td><?=$item['nome']?></td>
                 <td><?=$item['login']?></td>
-                <td><?=$item['senha']?></td>
                 <td>
 
                         <a href="router.php?component=usuario&action=buscar&id=<?=$item['id']?>">

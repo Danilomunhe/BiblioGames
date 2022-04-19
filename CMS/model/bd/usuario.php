@@ -20,7 +20,7 @@
         $sql = "insert into tblusuarios(nome, login, senha, imagem)
                     values('".$dadosUsuarios['nome']."', 
                     '".$dadosUsuarios['login']."', 
-                    '".$dadosUsuarios['senha']."', 
+                    md5('".$dadosUsuarios['senha']."'), 
                     '".$dadosUsuarios['imagem']."');";
 
         //Executa o script no banco 
@@ -42,7 +42,7 @@
 
         $sql = "update tblusuarios set  nome     ='".$dadosUsuarios['nome']."', 
                                     login  ='".$dadosUsuarios['login']."', 
-                                    senha  ='".$dadosUsuarios['senha']."', 
+                                    senha  =md5('".$dadosUsuarios['senha']."'), 
                                     imagem ='".$dadosUsuarios['imagem']."'
                                     where idusuario=".$dadosUsuarios['idUsuario'];
 
