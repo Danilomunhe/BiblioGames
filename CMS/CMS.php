@@ -22,7 +22,7 @@
    <div class="menu">
             <div class="categoriaDeServiço">
                 <div class="icone">
-                    <img src="img/controle2.png" alt="">
+                <a href="produtos.php"> <img src="img/categoria.png" alt=""></a> 
                 </div>
                 <span>Games</span>     
             </div>

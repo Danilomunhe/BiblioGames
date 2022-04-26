@@ -1,0 +1,91 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh
+}
+.form-usuario{
+    width: 700px;
+    height: 700px;
+    background: linear-gradient(blue, black);
+    box-shadow: 0 0 20px gray;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.campos{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.campos input{
+    width: 20rem;
+    height: 2rem;
+    border-radius:10px;
+    border: none;
+    padding-left: 10px;
+}
+.campos label{
+    text-align: center;
+}
+.btn{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.btn input{
+    width: 240px;
+    height: 50px;
+    cursor: pointer;
+    background-color: royalblue;
+    border: none;
+    border-radius: 10px;
+    transition: all 1s ease-in-out;
+
+}
+.btn input:hover{
+    background-color: green;
+    color: whitesmoke;
+}
+label{
+    font-size: 1.5rem;
+}
+table{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    
+}
+
+td{
+    border:5px solid blue;
+    border-radius: 10px;
+    width: 350px;
+    height: 70px;
+    text-align: center;
+    font-size: 2rem;
+}
+td img{
+    width: 40px;
+    height: 40px;
+    transition: all 1s;
+}
+
+td img:hover{
+    cursor: pointer;
+    transform: scale(120%);
+}
+textarea{
+    width: 100%; 
+    height: 80px;
+    resize: none;
+}
