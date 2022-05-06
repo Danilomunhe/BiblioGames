@@ -197,7 +197,94 @@
                               </script>");
 
                     }
-            break;
+            case 'PRODUTO':
+                //import da controller produtos
+                require_once('controller/controllerProdutos.php');
+
+                //validação para identificar o tipo de ação que será realizada
+                if($action=='INSERIR'){
+                    if(isset($_FILES) && !empty($_FILES)){
+                        //chama a função inserir na controller
+                        $resposta = inserirProduto($_POST, $_FILES);
+                    }else{
+                        $resposta = inserirProduto($_POST, null);
+                    }
+
+                    //valida o tipo de retorno booleano
+                    if(is_bool($resposta)){
+                        //verifica se o retorno foi verdadeiro
+                        if($resposta)
+                            echo("<script>alert('Registro Inserido com sucesso');
+                            window.location.href='produtos.php'</script>"); 
+                    }elseif(is_array($resposta))
+                        echo("<script> alert('".$resposta['message']."');
+                        window.history.back(); </script>");
+                }elseif($action == 'DELETAR'){
+                    $idProduto = $_GET['id'];
+                    $foto = $_GET['foto'];
+
+                    //Criamos um array para enviar os dados
+                    $arrayDados = array(
+                        "id"   => $idProduto,
+                        "foto" => $foto
+                    );
+
+                    $resposta = excluirProduto($arrayDados);
+
+                    if(is_bool($resposta)){
+                        //verificar se o retorno foi verdadeiro
+                        if($resposta){
+                            echo("<script>alert('Registro excluído com sucesso');
+                            window.location.href='produtos.php'</script>"); 
+                        }
+                    }elseif(is_array($resposta)){
+                        echo("<script> alert('".$resposta['message']."');
+                        window.history.back(); </script>");
+                    }
+                }elseif($action == 'BUSCAR'){
+
+                    $idProduto = $_GET['id'];
+
+                    $dados = buscarProduto($idProduto);
+
+                    //ativa variavel de sessao
+                    session_start();
+
+                    $_SESSION['dadosProduto'] = $dados;
+
+                    require_once('produtos.php');
+                }elseif($action == 'EDITAR'){
+                     
+                    //Recebe o id que foi enviado via action do form pela url
+                    $idProduto = $_GET['id'];
+
+                    //Recebe o nome d foto que foi enviada via get
+                    $foto = $_GET['foto'];
+
+                    
+                    //Criamos um array para enviar dados
+                    $arrayDados = array(
+                        "id"    => $idProduto,
+                        "foto"  => $foto,
+                        "file"  => $_FILES
+                      );
+
+                    //Chama a função de inserir na controller
+                    $resposta = atualizarProduto($_POST, $arrayDados);
+
+                    //Valida o tipo de retorno para ver se foi booleano
+                      if(is_bool($resposta)){
+                          //verificar se o retorno foi verdadeiro
+                          if($resposta)
+                              echo("<script>alert('Registro Atualizado com sucesso');
+                              window.location.href='produtos.php'</script>"); 
+  
+                      //Se o retorno for um array significa que houve um erro mo processo de inserção
+                      }elseif(is_array($resposta))
+                          echo("<script> alert('".$resposta['message']."');
+                          window.history.back(); </script>");
+                }
+                break;
          }  
 
      }

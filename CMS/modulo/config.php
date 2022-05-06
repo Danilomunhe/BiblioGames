@@ -8,5 +8,6 @@
 
         const MAX_FILE_UPLOAD = 5120;
         const EXT_FILE_UPLOAD = array("image/jpg", "image/jpeg", "image/png", "image/gif");
-        const DIRETORIO_FILE_UPLOAD = "arquivos/";                                                                                                                                              
+        // const DIRETORIO_FILE_UPLOAD = "arquivo/";                                                                                                                                              
+        define("DIRETORIO_FILE_UPLOAD", "arquivo/");                                                                                                                                              
 ?>
